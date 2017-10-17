@@ -103,11 +103,14 @@ namespace K {
           and abs(qeQuote.ask.size - quote.ask.size) < gw->minSize
         )) return;
         qeQuote = quote;
-        if (argDebugQuotes) FN::log("DEBUG", string("QE quote! ") + ((json)qeQuote).dump());
+
+        if (argDebugQuotes) {
+        	FN::log("DEBUG", string("QE quote! ") + ((json)qeQuote).dump());
+        }
         send();
       };
       static void send() {
-        sendQuoteToAPI();
+        //sendQuoteToAPI();
         sendQuoteToUI();
       };
       static void sendQuoteToAPI() {

@@ -12,7 +12,7 @@ namespace K {
         ev_gwDataOrder = [](mOrder k) {
           if (argDebugEvents) FN::log("DEBUG", "EV OG ev_gwDataOrder");
           if (argDebugOrders) FN::log("DEBUG", string("OG reply  ") + k.orderId + "::" + k.exchangeId + " [" + to_string((int)k.orderStatus) + "]: " + to_string(k.quantity) + "/" + to_string(k.lastQuantity) + " at price " + to_string(k.price));
-          updateOrderState(k);
+          //updateOrderState(k);
         };
         UI::uiSnap(uiTXT::Trades, &onSnapTrades);
         UI::uiSnap(uiTXT::OrderStatusReports, &onSnapOrders);

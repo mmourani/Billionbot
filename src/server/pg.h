@@ -228,7 +228,10 @@ namespace K {
           return;
         }
         mWallet baseWallet = pgWallet[gw->base];
+        //mWallet baseWallet = "5000";
+        baseWallet.amount = 100000;
         mWallet quoteWallet = pgWallet[gw->quote];
+        quoteWallet.amount = 100000;
         walletMutex.unlock();
         double baseValue = baseWallet.amount + quoteWallet.amount / mgFairValue + baseWallet.held + quoteWallet.held / mgFairValue;
         double quoteValue = baseWallet.amount * mgFairValue + quoteWallet.amount + baseWallet.held * mgFairValue + quoteWallet.held;
